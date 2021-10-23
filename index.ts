@@ -12,6 +12,12 @@ const client = new DiscordJS.Client({
 
 client.on("ready", () => {
   console.log("The bot is ready");
+
+  new WOKCommands(client, {
+    commandsDir: path.join(__dirname, "commands"),
+    typeScript: true,
+    testServers: ["849979763590430750"],
+  });
 });
 
 client.login(process.env.TOKEN);
